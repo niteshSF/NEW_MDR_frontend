@@ -1,0 +1,59 @@
+[
+  {
+    "id": "Mathematics",
+    "title": "Mathematics",
+    "image": "title_mathematics.png",
+    "subs": ["Measurement.png", "Applied Mathematics.png"]
+  },
+  {
+    "id": "Physical Sciences",
+    "title": "Physical Sciences",
+    "image": "title_physical_science.png",
+    "subs": ["Astronomy.png", "Physics.png", "Chemistry.png", "Biology.png"]
+  },
+  {
+    "id": "Earth and Environmental Sciences",
+    "title": "Earth & Environmental Sciences",
+    "image": "title_earth_environmental_sciences.png",
+    "subs": [
+      "Ecology.png",
+      "Geography.png",
+      "Botany.png",
+      "Atmospheric Sciences.png"
+    ]
+  },
+  {
+    "id": "Social Sciences",
+    "title": "Social Sciences",
+    "image": "title_social_science.png",
+    "subs": [
+      "Behavioural Sciences.png",
+      "Linguistics.png",
+      "Political Science.png",
+      "Military Science.png"
+    ]
+  },
+  {
+    "id": "Health and Life Sciences",
+    "title": "Health & Life Sciences",
+    "image": "title_health_life_sciences.png",
+    "subs": [
+      "Nursing.png",
+      "Neuro Science.png",
+      "Pharmacology.png",
+      "Toxicology.png"
+    ]
+  },
+  {
+    "id": "Applied Sciences",
+    "title": "Applied Sciences",
+    "image": "title_applied_sciences.png",
+    "subs": [
+      "Food Science.png",
+      "Engineering.png",
+      "Architecture.png",
+      "Crystallography.png",
+      "Gemmology.png"
+    ]
+  }
+]

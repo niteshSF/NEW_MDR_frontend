@@ -1,0 +1,222 @@
+[
+  {
+    "branch": "Mathematics",
+    "topic": "Applied Mathematics",
+    "titleImage": "AppliedMathematics-title.png",
+    "backgroundImage": "AppliedMathematics-bg.jpg",
+    "textColor": "black",
+    "layout": "type1",
+    "navBg": "#436B6C",
+    "navTextColor": "white",
+    "description": "Around 3000 BCE, ancient Indians were highly skilled in manufacturing various alloys using metals such as zinc, copper, and mercury, which were extensively employed in medicinal preparations for treating various ailments. The practice of chemistry dates back to the Vedic times, with references found in scriptures and Ayurvedic texts like the Charaka and Sushruta Samhitas, as well as in the Artha Shastra and Brihat Samhita. This was also reflected in other fields like glass making, pottery, jewellery, perfume making, showcasing the knowledge and artisanship of our ancestors."
+  },
+  {
+    "branch": "Mathematics",
+    "topic": "Measurement",
+    "titleImage": "Measurement-title.png",
+    "backgroundImage": "Measurement-bg.jpg",
+    "textColor": "black",
+    "layout": "type1",
+    "navBg": "#9F6F0F",
+    "navTextColor": "white",
+    "description": "Metrology of the scientific study of the measurement.  Ancient Indians used different types of measurement to measure solids and liquids, speed of light, length and distances.  In the Arthashastra of Kautilya mentions 'Angula' and 'Dhanusha' as units to measure length and distance.  Precise measurements were used to build sacrificial alters, temples which stands as an example of knowledge and profound understanding and mastery over the subject of ancient Indians."
+  },
+
+  {
+    "branch": "Physical Sciences",
+    "topic": "Biology",
+    "titleImage": "Biology-title.png",
+    "backgroundImage": "Biology-bg.jpg",
+    "layout": "type1",
+    "navBg": "#067B90",
+    "navTextColor": "white",
+    "description": "Biology, in its broadest sense, is the study of life in all its forms—from the invisible world of cells and genes to the vast ecosystems of forests, oceans, and human societies. In the Indian knowledge tradition, life is understood as an interconnected web governed by harmony between the body, mind, nature, and cosmic forces, as reflected in disciplines such as Ayurveda, Vṛkṣāyurveda, and Yoga. Ancient scholars observed plant growth, animal behaviour, human physiology, and environmental rhythms with remarkable precision, integrating empirical knowledge with philosophical insight. Modern biology, through advances in molecular science, genetics, and biotechnology, now reveals the same unity at microscopic levels, where DNA, cells, and biochemical pathways sustain life. Together, traditional wisdom and contemporary science affirm that life is not merely a mechanical process, but a dynamic, self-regulating system rooted in balance, adaptability, and mutual dependence among all living beings."
+  },
+  {
+    "branch": "Physical Sciences",
+    "topic": "Chemistry",
+    "titleImage": "Chemistry-title.png",
+    "backgroundImage": "Chemistry-bg.jpg",
+    "layout": "type1",
+    "navBg": "#75C2FF",
+    "description": "Around 3000 BCE, ancient Indians were highly skilled in manufacturing various alloys using metals such as zinc, copper, and mercury, which were extensively employed in medicinal preparations for treating various ailments. The practice of chemistry dates back to the Vedic times, with references found in scriptures and Ayurvedic texts like the Charaka and Sushruta Samhitas, as well as in the Artha Shastra and Brihat Samhita. This was also reflected in other fields like glass making, pottery, jewellery, perfume making, showcasing the knowledge and artisanship of our ancestors."
+  },
+  {
+    "branch": "Physical Sciences",
+    "topic": "Physics",
+    "titleImage": "Physics-title.png",
+    "backgroundImage": "Physics-bg.jpg",
+    "textColor": "black",
+    "layout": "type1",
+    "navBg": "#FBF5D8",
+    "description": "Ancient India made significant contributions to science and technology, including concepts of the atom and the theory of relativity, which were explicitly mentioned in scriptures and integrated into the Samkhya and Vaisheshika schools of thought. Indian philosophers possessed extensive knowledge of atomic physics, recognizing the smallest indivisible particle as 'Paramanu'. Thinkers like Kanada (6th century) and Pakudha Katyayana introduced various concepts and theories, such as the laws of motion and quantum mechanics, which have greatly enriched the field of physics."
+  },
+  {
+    "branch": "Physical Sciences",
+    "topic": "Astronomy",
+    "titleImage": "Astronomy-title.png",
+    "backgroundImage": "Astronomy-bg.jpg",
+    "layout": "type1",
+    "navBg": "#A6C4FF",
+    "description": "Astronomy, the study of celestial objects such as stars, planets, galaxies, and their influence on our planet.  The earliest references to astronomy appear in the Rig Veda dating back to Vedic times. Sages and scholars like Yagnavalkya, Aryabhatta, Varahamihira, and Bhaskaracharya made significant contributions to this field. The distance between the Sun and Earth and the time it taken for sunlight to reach our planet were calculated accurately by our scholars. These insights highlight the profound contributions of our ancestors to the fascinating field of astronomy."
+  },
+  {
+    "branch": "Earth and Environmental Sciences",
+    "topic": "Atmospheric Sciences",
+    "titleImage": "AtmosphericSciences-title.png",
+    "backgroundImage": "AtmosphericSciences-bg.jpg",
+    "layout": "type2",
+    "description": "Atmospheric Science is the interdisciplinary study of the Earth’s atmosphere, encompassing meteorology, climatology, aeronomy, and environmental physics. It examines atmospheric composition, circulation patterns, weather systems, climate variability, and interactions between the atmosphere, oceans, and land surfaces. In the Indian knowledge tradition, systematic observations of clouds, winds, rainfall, seasonal cycles, and celestial influences are found in texts such as the Bṛhatsaṃhitā, Vedāṅga Jyotiṣa, and classical agricultural and astronomical treatises. Contemporary atmospheric research integrates traditional insights with satellite observations, numerical modelling, and data analytics to address challenges related to climate change, disaster management, water security, and environmental sustainability."
+  },
+  {
+    "branch": "Earth and Environmental Sciences",
+    "topic": "Ecology",
+    "titleImage": "Ecology-title.png",
+    "backgroundImage": "Ecology-bg.jpg",
+    "layout": "type2",
+    "description": "Ecology is the scientific study of interactions among living organisms and between organisms and their physical environment, encompassing ecosystems, biodiversity, energy flows, and natural resource dynamics. It examines the interdependence of plants, animals, microorganisms, soil, water, and climate in sustaining life on Earth. In the Indian knowledge tradition, ecological awareness is deeply embedded in concepts such as Ṛta, Dharma, Pañcamahābhūta, sacred groves, tree worship, and traditional conservation practices reflected in Vedic, Purāṇic, and Ayurvedic literature. Contemporary ecological research integrates traditional wisdom with modern environmental science to promote biodiversity conservation, climate resilience, sustainable development, and harmonious coexistence between humanity and nature."
+  },
+  {
+    "branch": "Earth and Environmental Sciences",
+    "topic": "Geography",
+    "titleImage": "Geography-title.png",
+    "backgroundImage": "Geography-bg.jpg",
+    "textColor": "black",
+    "layout": "type2",
+    "navBg": "#79A7D8",
+    "description": "Geography is the branch of study that focuses on the land and its features, such as mountains, rivers, and plains. Ancient Indian texts like Varahamihira's 'Brihat Samhita' and 'Bugola Varnanam' offer comprehensive descriptions of the Earth's geography, detailing its various regions, mountain ranges, river systems, and climatic conditions."
+  },
+  {
+    "branch": "Earth and Environmental Sciences",
+    "topic": "Botany",
+    "titleImage": "Botany-title.png",
+    "backgroundImage": "Botany-bg.jpg",
+    "layout": "type2",
+    "description": "The relationship between humans and plants dates back to prehistoric times. In ancient India, botanical sciences flourished as agriculture was the primary occupation. The ancient Indians lived in harmony with nature and had extensive knowledge of plant taxonomy, soil types, cultivation practices, plant nourishment, and disease management. This knowledge is well-documented in scriptures such as the Vrikshayurveda, Brihatsamhita, Arthashastra, and Krishi-Parasara. Today, it is crucial for the present generation to reconnect with nature and live harmoniously to preserve the ecosystem."
+  },
+  {
+    "branch": "Social Sciences",
+    "topic": "Behavioural Sciences",
+    "titleImage": "BehaviouralSciences-title.png",
+    "backgroundImage": "BehaviouralSciences-bg.jpg",
+    "textColor": "black",
+    "layout": "type2",
+    "navBg": "#2339B0",
+    "navTextColor": "white",
+    "description": "Manovijnana (Samskrit: मनोवज्ञानम्)) pertains to the science of the mind or of mental states and processes, and of human and animal behaviour. Broadly these aspects are studied in the modern branch of Psychology and Psychiatry. Though there was no independent branch of study like Psychology in ancient India, the ancient thinkers had independently developed highly systematic views regarding mind and its operations, particularly with reference to mental health and well-being. There are several references found in the Upanishads, the Yoga sutras, the Bhagavad Gita related to the mind and its related topics like decision making, ethics, social conduct etc.,"
+  },
+  {
+    "branch": "Social Sciences",
+    "topic": "Linguistics",
+    "titleImage": "Linguistics-title.png",
+    "backgroundImage": "Linguistics-bg.jpg",
+    "textColor": "black",
+    "layout": "type2",
+    "navBg": "#533F2E",
+    "navTextColor": "white",
+    "description": "Linguistics is the scientific study of language, encompassing phonetics, phonology, morphology, semantics, and historical linguistics. Sage Bharata's 'Natayashastra' offers insights into the role of language in the performing arts, while Panini's 'Ashtadhyayi' provides a comprehensive and systematic grammar of the Sanskrit language. 'Nirukta' is unique for its exploration of etymology and its relevance to interpreting Vedic texts."
+  },
+  {
+    "branch": "Social Sciences",
+    "topic": "Political Science",
+    "titleImage": "PoliticalScience-title.png",
+    "backgroundImage": "PoliticalScience-bg.jpg",
+    "textColor": "black",
+    "layout": "type2",
+    "navBg": "#5A3025",
+    "navTextColor": "white",
+    "description": "Political Science is concerned with the study of the state or nation, policies and governance.  Political science is inter-related with other fields including economics, law, sociology, public administration, international relations etc.,   Earliest references can be found in Mahabharata where Bhisma imparts knowledge on good governance to Yudhishtira in the Anushasana parva and the Kautilya's Artha Shastra where he has detailed about the governing of a state."
+  },
+  {
+    "branch": "Social Sciences",
+    "topic": "Military Science",
+    "titleImage": "MilitaryScience-title.png",
+    "backgroundImage": "MilitaryScience-bg.jpg",
+    "textColor": "black",
+    "layout": "type2",
+    "navBg": "#854625",
+    "navTextColor": "white",
+    "description": "Dhanurveda, also known as military science, was part of a curriculum in Gurukulam-s in ancient India, where the disciples were introduced to the art of combat, handling of weapons, riding horses, elephants, chariots and creating strategies. The Dhanurveda is Upaveda under Atharveda, documenting the art of war.  Kautilya's a master strategist also, details about the art of warfare in his book – Artha Shastra. Ramayana and Mahabharata, great epics, also details the art of warfare."
+  },
+
+  {
+    "branch": "Health and Life Sciences",
+    "topic": "Nursing",
+    "titleImage": "Nursing-title.png",
+    "backgroundImage": "Nursing-bg.jpg",
+    "textColor": "black",
+    "layout": "type2",
+    "navBg": "#42ACA6",
+    "description": "Nursing is part of medicinal science and is focused on taking care of the individuals, families and communities so that they can recover optimal health. Ayurveda gives nursing a significant place by making it one of the four legs on which therapeusis stands. There is separate section dedicated for nursing in the Charaka and Sushruta Samhita, where it elaborates on the skills and qualities required for a nurse."
+  },
+  {
+    "branch": "Health and Life Sciences",
+    "topic": "Neuro Science",
+    "titleImage": "NeuroScience-title.png",
+    "backgroundImage": "NeuroScience-bg.jpg",
+    "layout": "type2",
+    "navBg": "#8807F8",
+    "navTextColor": "white",
+    "description": "Neuroscience or Marma chikitsa, in ancient India dates back to Vedic era where the central neural axis (Sushumna Nadi) and the nerve centres (chakras) are mentioned in the 3rd chapter of Rigveda. Another text Yoga Yagnavalkya by Rishi Yagnavalkya gives the detailed description of the human nervous structure and its functions. Our seers and sages had the profound knowledge of the nervous system, their functions and how to keep the system healthy."
+  },
+  {
+    "branch": "Health and Life Sciences",
+    "topic": "Pharmacology",
+    "titleImage": "Pharmacology-title.png",
+    "backgroundImage": "Pharmacology-bg.jpg",
+    "layout": "type2",
+    "navBg": "#C0F500",
+    "description": "Neuroscience or Marma chikitsa, in ancient India dates back to Vedic era where the central neural axis (Sushumna Nadi) and the nerve centres (chakras) are mentioned in the 3rd chapter of Rigveda. Another text Yoga Yagnavalkya by Rishi Yagnavalkya gives the detailed description of the human nervous structure and its functions. Our seers and sages had the profound knowledge of the nervous system, their functions and how to keep the system healthy."
+  },
+  {
+    "branch": "Health and Life Sciences",
+    "topic": "Toxicology",
+    "titleImage": "Toxicology-title.png",
+    "backgroundImage": "Toxicology-bg.jpg",
+    "layout": "type2",
+    "description": "Toxicology is concerned with the study of adverse effect of chemicals on living organisms.  It is the study of symptoms, mechanisms, treatments and detection of venoms and toxins, especially in human beings.  Toxicology was known to ancient Indians and Charaka has recorded the poisons found in India and related treatments in his book Charaka Samhita."
+  },
+  {
+    "branch": "Applied Sciences",
+    "topic": "Food Science",
+    "titleImage": "FoodScience-title.png",
+    "backgroundImage": "FoodScience-bg.jpg",
+    "layout": "type2",
+    "description": "Food in an integral part of any society, not only for survival, but also as an identity of culture and tradition of a region.  Ancient Indian revered food as Brahman as per the Taittariya Upanishad. In Bhagavadgita, Sri Krishna explains how the food influences nature and aspirations of a person. Ancient Indians had the profound understanding of various types of food, tastes and how food can alter the life style to lead a fulfilling life.  "
+  },
+  {
+    "branch": "Applied Sciences",
+    "topic": "Engineering",
+    "titleImage": "Engineering-title.png",
+    "backgroundImage": "Engineering-bg.jpg",
+    "layout": "type2",
+    "navBg": "#01487C",
+    "navTextColor": "white",
+    "description": "Engineering involves the application of scientific principles and concepts to solve societal problems and benefit humanity. It has a broad range of applications, including architecture, transportation, space exploration, agriculture, and water management. Our ancestors possessed a deep understanding of these scientific concepts and their applications, which are documented in Vedic scriptures and Puranas, as well as texts like the Brihat Samhita, Shulba Sutra, Yantra Sarvaswa, Tantra Pradipica, Yukti Kalpatru, and Shilpadipika."
+  },
+  {
+    "branch": "Applied Sciences",
+    "topic": "Architecture",
+    "titleImage": "Architecture-title.png",
+    "backgroundImage": "Architecture-bg.jpg",
+    "textColor": "black",
+    "layout": "type2",
+    "description": "Indian architecture is as old as the history of the civilisation. The excavations Mohenjodaro and Harappa proved the well-developed urban civilisation in India around 3000 B.C. The expertise in architecture also known as Vaastu Shastra can be seen temple architecture, step wells, Ajanta-Ellora caves and many more temples and other structures across India."
+  },
+  {
+    "branch": "Applied Sciences",
+    "topic": "Crystallography",
+    "titleImage": "Crystallography-title.png",
+    "backgroundImage": "Crystallography-bg.jpg",
+    "layout": "type2",
+    "description": "is the scientific study of the internal structure, symmetry, and formation of crystals, examining how atoms, ions, and molecules are arranged in an ordered lattice. It provides foundational insights into the physical, chemical, optical, and mechanical properties of materials, playing a crucial role in fields such as mineralogy, metallurgy, gemmology, pharmaceuticals, and material sciences. In the Indian intellectual tradition, systematic observations of crystal forms, metals, and minerals are reflected in texts related to Rasaśāstra, Ratnaśāstra, and traditional metallurgical treatises. Contemporary crystallographic research integrates classical observations with advanced analytical techniques, enabling applications in technology, medicine, heritage conservation, and the study of natural and engineered materials."
+  },
+  {
+    "branch": "Applied Sciences",
+    "topic": "Gemmology",
+    "titleImage": "Gemmology-title.png",
+    "backgroundImage": "Gemmology-bg.jpg",
+    "layout": "type2",
+    "description": "Gemmology is the interdisciplinary study of gemstones that integrates mineralogy, crystallography, physics, chemistry, traditional medical knowledge, and cultural symbolism. In the Indian knowledge tradition, gems are not viewed merely as ornamental objects but as substances endowed with specific physical, vibrational, and therapeutic properties, extensively discussed in texts such as Ratnaśāstra, Āyurveda, Jyotiṣa, and allied śāstras. Gemmological studies encompass the identification, classification, origin, processing, and applications of gems for preventive, curative, ritualistic, and socio-cultural purposes. Contemporary research in gemmology bridges classical textual wisdom with modern scientific analysis, offering insights into sustainable resource use, health applications, heritage conservation, and material sciences."
+  }
+]
