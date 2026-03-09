@@ -34,7 +34,7 @@ export default function DataTablePage() {
     const searchText = search.toLowerCase();
 
     const name = item.name?.toLowerCase() || "";
-    const author = item.additional_info?.author_name?.toLowerCase() || "";
+    const author = item.additional_info?.[0]?.author_name?.toLowerCase() || "";
     const code = item.manuscript_code?.toLowerCase() || "";
     const accession = String(item.accession_number || "").toLowerCase();
 
@@ -121,48 +121,96 @@ export default function DataTablePage() {
         </div>
       </div>
 
-      {/* TABLE */}
+      {/* TABLE SECTION */}
       <div className="px-4 md:px-10 pb-1">
         <div className="rounded-lg max-h-[62vh] overflow-y-auto">
-          <table
-            className="w-full border-separate min-w-[600px]"
-            style={{ borderSpacing: "0 8px" }}
-          >
-            <thead className="sticky top-0 z-10 bg-[#5e5374]">
-              <tr className="text-[#96E6FF] text-[clamp(14px,1.2vw,24px)]">
-                <th className="py-2 text-center">Sl.No</th>
-                <th className="py-2 pl-4 md:pl-10 text-left">Name</th>
-                <th className="py-2 text-left">Author</th>
-                <th className="py-2 text-left">{type} ID</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {filteredData.length === 0 && (
-                <tr>
-                  <td
-                    colSpan="4"
-                    className="bg-[#776993] text-white py-3 text-center rounded-lg"
+          {type === "Manuscripts" ? (
+            // MANUSCRIPT TABLE
+            <table
+              className="w-full border-separate min-w-[600px]"
+              style={{ borderSpacing: "0 8px" }}
+            >
+              <thead className="sticky top-0 z-10 bg-[#5e5374]">
+                <tr className="text-[#96E6FF] text-[clamp(14px,1.2vw,24px)]">
+                  <th className="py-2 text-center">Sl.No</th>
+                  <th className="py-2 pl-4 md:pl-10 text-left">Name</th>
+                  <th className="py-2 text-left">Author</th>
+                  <th className="py-2 text-left">{type}: Collection code</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredData.length === 0 && (
+                  <tr>
+                    <td
+                      colSpan="4"
+                      className="bg-[#776993] text-white py-3 text-center rounded-lg"
+                    >
+                      No Result Found
+                    </td>
+                  </tr>
+                )}
+                {filteredData.map((item, index) => (
+                  <tr
+                    key={item.id}
+                    onClick={() => navigate(`${item.id}`)}
+                    className="bg-[#776993] hover:opacity-80 cursor-pointer text-white text-[clamp(14px,1.1vw,22px)]"
                   >
-                    No Result Found
-                  </td>
+                    <td className="py-3 text-center">{index + 1}</td>
+                    <td className="pl-4 md:pl-10">{item.name}</td>
+                    <td>{item.additional_info?.[0]?.author_name || "—"}</td>
+                    <td>{item.manuscript_code}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            // OTHER TYPES TABLE (Books, Articles, etc.)
+            <table
+              className="w-full border-separate min-w-[900px]"
+              style={{ borderSpacing: "0 8px" }}
+            >
+              <thead className="sticky top-0 z-10 bg-[#5e5374]">
+                <tr className="text-[#96E6FF] text-[clamp(14px,1.2vw,24px)]">
+                  <th className="py-2 text-center">Sl.No</th>
+                  <th className="py-2 pl-4 md:pl-10 text-left">
+                    Original Title
+                  </th>
+                  {/* <th className="py-2 text-left">Accession No.</th> */}
+                  <th className="py-2 text-left">Author</th>
+                  <th className="py-2 text-left">Published Title</th>
+                  <th className="py-2 text-left">Publisher Name</th>
                 </tr>
-              )}
+              </thead>
+              <tbody>
+                {filteredData.length === 0 && (
+                  <tr>
+                    <td
+                      colSpan="4"
+                      className="bg-[#776993] text-white py-3 text-center rounded-lg"
+                    >
+                      No Result Found
+                    </td>
+                  </tr>
+                )}
+                {filteredData.map((item, index) => (
+                  <tr
+                    key={item.id}
+                    onClick={() => navigate(`${item.id}`)}
+                    className="bg-[#776993] hover:opacity-80 cursor-pointer text-white text-[clamp(14px,1.1vw,22px)]"
+                  >
+                    <td className="py-3 text-center">{index + 1}</td>
+                    <td className="pl-4 md:pl-10">{item.name}</td>
 
-              {filteredData.map((item, index) => (
-                <tr
-                  key={item.id}
-                  onClick={() => navigate(`${item.accession_number}`)}
-                  className="bg-[#776993] hover:opacity-80 cursor-pointer text-white text-[clamp(14px,1.1vw,22px)]"
-                >
-                  <td className="py-3 text-center">{index + 1}</td>
-                  <td className="pl-4 md:pl-10">{item.name}</td>
-                  <td>{item.additional_info?.author_name || "—"}</td>
-                  <td>{item.manuscript_code}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    {/* <td className="text-center">{item.accession_number}</td> */}
+                    <td>{item.additional_info?.[0]?.author_name || "—"}</td>
+                    <td>{item.book?.published_title || "—"}</td>
+
+                    <td>{item.book?.publisher_name || "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
     </div>

@@ -1,25 +1,29 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../services/api";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 
 export default function ViewDocumentPage() {
-  const { accession_number } = useParams();
+  const { id, type } = useParams();
   const navigate = useNavigate();
 
   const [data, setData] = useState(null);
-  const [pdfs, setPdfs] = useState([]);
+  const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await api.get(`/api/v1/manuscripts/${accession_number}`);
+        // Fetch manuscript details by id
+        const res = await api.get(`/api/v1/manuscripts/${id}`);
         setData(res.data);
 
-        const pdfRes = await api.get(
-          `/api/v1/viewDocument/${accession_number}`,
-        );
-        setPdfs(pdfRes.data.files);
+        // Fetch documents by manuscript name
+        const fileRes = await api.get(`/api/v1/viewDocument/${res.data.name}`);
+        setFiles(fileRes.data.files);
+        console.log("TYPE:", data.type);
+        console.log("FILES:", files);
       } catch (err) {
         console.error("Error loading manuscript:", err);
       } finally {
@@ -27,8 +31,8 @@ export default function ViewDocumentPage() {
       }
     }
 
-    if (accession_number) fetchData();
-  }, [accession_number]);
+    if (id) fetchData();
+  }, [id]);
 
   if (loading) {
     return <div className="text-center mt-20 text-lg">Loading...</div>;
@@ -38,6 +42,19 @@ export default function ViewDocumentPage() {
     return (
       <div className="text-center mt-20 text-lg">Manuscript not found</div>
     );
+  }
+
+  const imageFiles = files.filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f));
+  const pdfFiles = files.filter((f) => /\.pdf$/i.test(f));
+
+  let displayFiles = [];
+
+  if (type === "Manuscripts") {
+    displayFiles = imageFiles;
+  }
+
+  if (type === "Books") {
+    displayFiles = pdfFiles;
   }
 
   return (
@@ -50,7 +67,7 @@ export default function ViewDocumentPage() {
               {data.name}
             </h1>
             <p className="text-xs sm:text-sm opacity-80 mt-1">
-              Code: {data.accession_number}
+              Subject : {data.subject?.name}
             </p>
           </div>
 
@@ -67,61 +84,60 @@ export default function ViewDocumentPage() {
           <h2 className="text-lg sm:text-xl font-bold mb-6 flex items-center gap-2">
             📂 Total Documents
             <span className="text-sm bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
-              {pdfs.length}
+              {displayFiles.length}
             </span>
           </h2>
 
-          {pdfs.length === 0 ? (
+          {displayFiles.length === 0 ? (
             <div className="text-gray-500 italic text-center py-10">
               No documents available
             </div>
           ) : (
-            /* AUTO RESPONSIVE GRID */
             <div
               className="grid gap-6 justify-center"
               style={{
                 gridTemplateColumns: "repeat(auto-fill, minmax(180px, 180px))",
               }}
             >
-              {pdfs.map((file, index) => {
-                const fileUrl = `http://localhost:8000/api/v1/viewDocument/${accession_number}/${encodeURIComponent(file)}`;
+              {type === "Manuscripts" ? (
+                <PhotoProvider>
+                  {displayFiles.map((file, index) => {
+                    const fileUrl = `http://localhost:8000/api/v1/viewDocument/${data.name}/${encodeURIComponent(file)}`;
 
-                const openFile = () => {
-                  window.open(fileUrl, "_blank");
-                };
+                    return (
+                      <PhotoView key={index} src={fileUrl}>
+                        <img
+                          src={fileUrl}
+                          alt={file}
+                          className="rounded-xl shadow-md cursor-pointer hover:scale-105 transition"
+                        />
+                      </PhotoView>
+                    );
+                  })}
+                </PhotoProvider>
+              ) : (
+                displayFiles.map((file, index) => {
+                  const fileUrl = `http://localhost:8000/api/v1/viewDocument/${data.name}/${encodeURIComponent(file)}`;
 
-                return (
-                  <div
-                    key={index}
-                    onClick={openFile}
-                    className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer p-5 sm:p-6 flex flex-col items-center text-center"
-                  >
-                    {/* ICON */}
-                    <div className="text-red-600 text-4xl sm:text-5xl mb-4">
-                      📄
-                    </div>
-
-                    {/* FILE NAME */}
-                    <p className="font-semibold text-gray-800 break-words text-sm sm:text-base mb-2">
-                      {file}
-                    </p>
-
-                    <p className="text-xs sm:text-sm text-gray-500 mb-4">
-                      PDF Document
-                    </p>
-
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        openFile();
-                      }}
-                      className="mt-auto w-full bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition text-sm font-semibold"
+                  return (
+                    <div
+                      key={index}
+                      onClick={() => window.open(fileUrl, "_blank")}
+                      className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer p-5 flex flex-col items-center text-center"
                     >
-                      Open
-                    </button>
-                  </div>
-                );
-              })}
+                      <div className="text-red-600 text-5xl mb-4">📄</div>
+
+                      <p className="font-semibold text-gray-800 break-words mb-2">
+                        {file}
+                      </p>
+
+                      <button className="mt-auto bg-blue-600 text-white px-4 py-2 rounded-lg">
+                        Open
+                      </button>
+                    </div>
+                  );
+                })
+              )}
             </div>
           )}
         </div>

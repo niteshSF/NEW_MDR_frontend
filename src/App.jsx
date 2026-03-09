@@ -36,11 +36,11 @@ function App() {
           element={<DataTablePage />}
         />
         <Route
-          path="/branches-of-science/:branch/:topic/:type/:accession_number"
+          path="/branches-of-science/:branch/:topic/:type/:id"
           element={<InfoPage />}
         />
         <Route
-          path="/branches-of-science/:branch/:topic/:type/:accession_number/view"
+          path="/branches-of-science/:branch/:topic/:type/:id/view"
           element={<ViewDocumentPage />}
         />
       </Routes>
