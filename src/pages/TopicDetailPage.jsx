@@ -41,11 +41,11 @@ export default function TopicDetailPage() {
   let dynamicTextSize = "text-[clamp(18px,1.2vw+0.6vh,26px)]";
 
   if (descLength < 400) {
-    dynamicTextSize = "text-[clamp(22px,1.6vw+1vh,34px)]";
+    dynamicTextSize = "text-[clamp(22px,1.6vw+0.4vh,34px)]";
   } else if (descLength < 800) {
-    dynamicTextSize = "text-[clamp(18px,1.3vw+0.8vh,28px)]";
+    dynamicTextSize = "text-[clamp(18px,1.3vw+0.55vh,28px)]";
   } else {
-    dynamicTextSize = "text-[clamp(17px,1vw+0.5vh,22px)]";
+    dynamicTextSize = "text-[clamp(17px,1vw+0.6vh,22px)]";
   }
 
   const layoutType = data.layout || "type1";
@@ -61,7 +61,7 @@ export default function TopicDetailPage() {
     >
       {/* NAV */}
       <nav
-        className="flex justify-end px-16 py-2 gap-10 cursor-pointer font-bold shrink-0"
+        className="sticky top-0 z-50 flex justify-end px-16 py-2 gap-10 cursor-pointer font-bold shrink-0"
         style={{
           backgroundColor: data?.navBg || "white",
           color: data?.navTextColor || "#2b1c35",
@@ -142,21 +142,21 @@ export default function TopicDetailPage() {
           <div className="flex flex-col lg:flex-row min-h-[calc(100svh-48px)]">
             {/* LEFT SIDE */}
             <div className="w-full lg:w-1/2 flex lg:items-center">
-              <div className="w-full max-w-2xl px-6 lg:pl-20 lg:pr-10 py-10 lg:py-0">
+              <div className="w-full max-w-2xl px-6 lg:pl-10 lg:pr-10 py-10 lg:py-0 flex flex-col justify-center">
                 {/* TITLE (LEFT ALIGNED) */}
-                <div className="w-full">
+                <div className="w-auto">
                   <img
                     src={`/assets/topics/${data.titleImage}`}
                     alt="Title"
-                    className="w-[clamp(200px,22vw+2vh,500px)]"
+                    className="w-[clamp(200px,22vw+2vh,300px)]"
                   />
                 </div>
 
                 {/* DESCRIPTION */}
                 <div
                   className={`
-            mt-[clamp(20px,4vh,60px)]
-            max-w-2xl
+            mt-[clamp(20px,1vh,60px)]
+            max-w-4xl
             text-justify
             leading-[clamp(1.4,1.2vw+0.8vh,2)]
             ${dynamicTextSize}
@@ -186,7 +186,7 @@ export default function TopicDetailPage() {
 
                       <p
                         className="mt-1 px-8 py-0.5 rounded-lg bg-fuchsia-900 bg-opacity-60 text-white 
-              text-[clamp(12px,1vw+0.5vh,20px)] font-semibold capitalize"
+                  text-[clamp(12px,1vw+0.5vh,20px)] font-semibold capitalize"
                       >
                         {counts[item] || 0}
                       </p>
@@ -196,8 +196,8 @@ export default function TopicDetailPage() {
               </div>
             </div>
 
-            {/* RIGHT SIDE (ONLY ON LARGE SCREENS) */}
-            <div className="hidden lg:block lg:w-1/2" />
+            {/* RIGHT SIDE */}
+            <div className="hidden lg:flex lg:flex-1" />
           </div>
         )}
       </div>

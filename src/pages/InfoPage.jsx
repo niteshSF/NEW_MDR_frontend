@@ -96,7 +96,8 @@ export default function InfoPage() {
     <Section title="Publication & Archive">
       <Field label="Complete?" value={data.is_complete ? "Yes" : "No"} />
       <Field label="Published?" value={data.published ? "Yes" : "No"} />
-      <Field label="No. of Folios" value={data.no_of_folios} />
+      {/* <Field label="No. of Folios" value={data.no_of_folios} /> */}
+      <Field label="No. of Pages" value={data.book?.no_of_pages} />
 
       <Field
         label="Tags"
@@ -121,7 +122,6 @@ export default function InfoPage() {
       <Field label="Editor" value={data.book?.editor_name} />
       <Field label="Year" value={data.book?.publication_year} />
       <Field label="Place" value={data.book?.publication_place} />
-      <Field label="No. of Pages" value={data.book?.no_of_pages} />
       <Field label="Archive Link" value={data.book?.archive_link} full />
       <Field label="Beginning Line" value={data.book?.beginning_line} />
       <Field label="Ending Line" value={data.book?.ending_line} />

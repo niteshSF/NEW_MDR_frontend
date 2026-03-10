@@ -12,16 +12,24 @@ export default function DataTablePage() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await api.get("/api/v1/manuscripts/", {
-          params: {
-            subject: topic,
-            ...(type === "Books" && { published: true }),
-          },
-        });
+        let response;
+
+        if (type === "Books") {
+          response = await api.get("/api/v1/books", {
+            params: { subject: topic },
+          });
+        } else if (type === "Manuscripts") {
+          response = await api.get("/api/v1/manuscripts/", {
+            params: { subject: topic },
+          });
+        } else if (type === "Articles") {
+          setData([]); // no article data yet
+          return;
+        }
 
         setData(response.data);
       } catch (error) {
-        console.error("Error fetching manuscripts:", error);
+        console.error("Error fetching data:", error);
       }
     }
 
@@ -32,6 +40,13 @@ export default function DataTablePage() {
 
   const filteredData = data.filter((item) => {
     const searchText = search.toLowerCase();
+
+    if (type === "Books") {
+      const title = item.published_title?.toLowerCase() || "";
+      const publisher = item.publisher_name?.toLowerCase() || "";
+
+      return title.includes(searchText) || publisher.includes(searchText);
+    }
 
     const name = item.name?.toLowerCase() || "";
     const author = item.additional_info?.[0]?.author_name?.toLowerCase() || "";
@@ -55,7 +70,7 @@ export default function DataTablePage() {
       }}
     >
       {/* NAV */}
-      <nav className="flex justify-end px-4 md:px-16 py-2 bg-[#A6C4FF] gap-6 md:gap-10 text-[#646464] font-semibold text-sm md:text-base">
+      <nav className="sticky top-0 z-50 flex justify-end px-4 md:px-16 py-2 bg-[#A6C4FF] gap-6 md:gap-10 text-[#646464] font-semibold text-sm md:text-base">
         <div
           className="text-[#2b1c35] font-bold cursor-pointer hover:underline"
           onClick={() => navigate("/branches-of-science")}
@@ -142,7 +157,7 @@ export default function DataTablePage() {
                 {filteredData.length === 0 && (
                   <tr>
                     <td
-                      colSpan="4"
+                      colSpan="5"
                       className="bg-[#776993] text-white py-3 text-center rounded-lg"
                     >
                       No Result Found
@@ -164,7 +179,7 @@ export default function DataTablePage() {
               </tbody>
             </table>
           ) : (
-            // OTHER TYPES TABLE (Books, Articles, etc.)
+            // OTHER TYPES TABLE (Books, Articles)
             <table
               className="w-full border-separate min-w-[900px]"
               style={{ borderSpacing: "0 8px" }}
@@ -175,17 +190,16 @@ export default function DataTablePage() {
                   <th className="py-2 pl-4 md:pl-10 text-left">
                     Original Title
                   </th>
-                  {/* <th className="py-2 text-left">Accession No.</th> */}
                   <th className="py-2 text-left">Author</th>
-                  <th className="py-2 text-left">Published Title</th>
                   <th className="py-2 text-left">Publisher Name</th>
+                  <th className="py-2 text-left">Published Title</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredData.length === 0 && (
                   <tr>
                     <td
-                      colSpan="4"
+                      colSpan="5"
                       className="bg-[#776993] text-white py-3 text-center rounded-lg"
                     >
                       No Result Found
@@ -195,17 +209,27 @@ export default function DataTablePage() {
                 {filteredData.map((item, index) => (
                   <tr
                     key={item.id}
-                    onClick={() => navigate(`${item.id}`)}
+                    onClick={() => {
+                      if (type === "Books") {
+                        navigate(
+                          `/branches-of-science/${branch}/${topic}/Books/${item.manuscript_id}`,
+                        );
+                      } else if (type === "Manuscripts") {
+                        navigate(`${item.id}`);
+                      }
+                    }}
                     className="bg-[#776993] hover:opacity-80 cursor-pointer text-white text-[clamp(14px,1.1vw,22px)]"
                   >
                     <td className="py-3 text-center">{index + 1}</td>
-                    <td className="pl-4 md:pl-10">{item.name}</td>
+                    <td className="pl-4 md:pl-10">
+                      {item.original_title || "—"}
+                    </td>
 
-                    {/* <td className="text-center">{item.accession_number}</td> */}
-                    <td>{item.additional_info?.[0]?.author_name || "—"}</td>
-                    <td>{item.book?.published_title || "—"}</td>
-
-                    <td>{item.book?.publisher_name || "—"}</td>
+                    <td>{item.author_name || "—"}</td>
+                    <td>{item.publisher_name || "—"}</td>
+                    <td className="pl-4 md:pl-10">
+                      {item.published_title || "—"}
+                    </td>
                   </tr>
                 ))}
               </tbody>

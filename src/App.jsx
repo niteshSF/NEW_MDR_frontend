@@ -10,6 +10,7 @@ import TopicDetailPage from "./pages/TopicDetailPage";
 import DataTablePage from "./pages/DataTablePage";
 import InfoPage from "./pages/InfoPage";
 import ViewDocumentPage from "./pages/ViewDocumentPage";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           path="/branches-of-science/:branch/:topic/:type/:id/view"
           element={<ViewDocumentPage />}
         />
+        <Route path="/branches-of-science/search" element={<SearchPage />} />
       </Routes>
     </BrowserRouter>
   );

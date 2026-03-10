@@ -105,7 +105,17 @@ export default function BranchesOfScience() {
       </nav>
 
       {/* Main Content */}
-      <div className="flex-1 flex justify-center items-center overflow-hidden">
+      <div className="flex-1 relative flex justify-center items-center overflow-hidden">
+        {/* SEARCH BUTTON */}
+        <div className="absolute top-6 right-10 z-50">
+          <button
+            onClick={() => navigate("/branches-of-science/search")}
+            className="bg-[white] text-[#07094e] font-semibold px-8 py-2 rounded-lg shadow-lg hover:bg-[#bbbabb]"
+          >
+            🔍 Search
+          </button>
+        </div>
+
         <div
           className="relative"
           style={{
@@ -118,7 +128,7 @@ export default function BranchesOfScience() {
             src="/assets/bos/center_circle.png"
             alt="Center"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-            style={{ width: "42%", height: "42%", objectFit: "contain" }}
+            style={{ width: "47%", height: "47%", objectFit: "contain" }}
           />
 
           {/* Branch circles */}
